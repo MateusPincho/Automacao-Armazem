@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<Module xmlns="http://waters.sourceforge.net/xsd/module" xmlns:B="http://waters.sourceforge.net/xsd/base" Name="automacao-armazem">
+<ComponentList>
+<SimpleComponent Kind="PLANT" Name="robo01">
+<Graph>
+</Graph>
+</SimpleComponent>
+</ComponentList>
+</Module>
