@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<Module xmlns="http://waters.sourceforge.net/xsd/module" xmlns:B="http://waters.sourceforge.net/xsd/base" Name="automacao-armazem">
+<EventDeclList>
+<EventDecl Kind="UNCONTROLLABLE" Name="request_M1"/>
+<EventDecl Kind="UNCONTROLLABLE" Name="request_M2"/>
+<EventDecl Kind="CONTROLLABLE" Name="robot_1_access_BE"/>
+<EventDecl Kind="CONTROLLABLE" Name="robot_1_load_box"/>
+<EventDecl Kind="CONTROLLABLE" Name="unload_M1"/>
+<EventDecl Kind="CONTROLLABLE" Name="unload_M2"/>
+<EventDecl Kind="UNCONTROLLABLE" Name="robot_1_failure"/>
+<EventDecl Kind="UNCONTROLLABLE" Name="robot_1_reset"/>
+<EventDecl Kind="UNCONTROLLABLE" Name="request_M3"/>
+<EventDecl Kind="UNCONTROLLABLE" Name="request_M4"/>
+<EventDecl Kind="CONTROLLABLE" Name="unload_M3"/>
+<EventDecl Kind="CONTROLLABLE" Name="unload_M4"/>
+<EventDecl Kind="UNCONTROLLABLE" Name="robot_2_failure"/>
+<EventDecl Kind="UNCONTROLLABLE" Name="robot_2_reset"/>
+<EventDecl Kind="CONTROLLABLE" Name="robot_2_access_BE"/>
+<EventDecl Kind="CONTROLLABLE" Name="robot_2_load_box"/>
+<EventDecl Kind="PROPOSITION" Name=":accepting"/>
+</EventDeclList>
+<ComponentList>
+<SimpleComponent Kind="PLANT" Name="robo01">
+<Graph>
+<NodeList>
+<SimpleNode Initial="true" Name="Ocioso">
+<PointGeometry>
+<Point X="32" Y="256"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="5" Y="5"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="AcessandoBEParaM1">
+<PointGeometry>
+<Point X="112" Y="144"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-52" Y="-24"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="TranspCaixaParaM1">
+<PointGeometry>
+<Point X="432" Y="144"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="1" Y="-24"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="LocalizandoPedidoParaM1">
+<PointGeometry>
+<Point X="288" Y="144"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-73" Y="-24"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="AcessandoBEParaM2">
+<PointGeometry>
+<Point X="112" Y="384"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-63" Y="9"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="LocalizandoPedidoParaM2">
+<PointGeometry>
+<Point X="288" Y="384"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-72" Y="7"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="TranspCaixaParaM2">
+<PointGeometry>
+<Point X="432" Y="384"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+</NodeList>
+<EdgeList>
+<Edge Source="Ocioso" Target="AcessandoBEParaM1">
+<LabelBlock>
+<SimpleIdentifier Name="request_M1"/>
+<LabelGeometry Anchor="NW">
+<Point X="6" Y="2"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+<Edge Source="AcessandoBEParaM1" Target="LocalizandoPedidoParaM1">
+<LabelBlock>
+<SimpleIdentifier Name="robot_1_access_BE"/>
+<LabelGeometry Anchor="NW">
+<Point X="-56" Y="8"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+<Edge Source="LocalizandoPedidoParaM1" Target="TranspCaixaParaM1">
+<LabelBlock>
+<SimpleIdentifier Name="robot_1_load_box"/>
+<LabelGeometry Anchor="NW">
+<Point X="-51" Y="9"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+<Edge Source="Ocioso" Target="AcessandoBEParaM2">
+<LabelBlock>
+<SimpleIdentifier Name="request_M2"/>
+<LabelGeometry Anchor="NW">
+<Point X="14" Y="-2"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+<Edge Source="AcessandoBEParaM2" Target="LocalizandoPedidoParaM2">
+<LabelBlock>
+<SimpleIdentifier Name="robot_1_access_BE"/>
+<LabelGeometry Anchor="NW">
+<Point X="-62" Y="-26"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+<Edge Source="LocalizandoPedidoParaM2" Target="TranspCaixaParaM2">
+<LabelBlock>
+<SimpleIdentifier Name="robot_1_load_box"/>
+<LabelGeometry Anchor="NW">
+<Point X="-50" Y="-28"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+<Edge Source="TranspCaixaParaM2" Target="Ocioso">
+<LabelBlock>
+<SimpleIdentifier Name="unload_M2"/>
+<LabelGeometry Anchor="NW">
+<Point X="8" Y="-19"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="327" Y="307"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="TranspCaixaParaM1" Target="Ocioso">
+<LabelBlock>
+<SimpleIdentifier Name="unload_M1"/>
+<LabelGeometry Anchor="NW">
+<Point X="5" Y="2"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="328" Y="236"/>
+</SplineGeometry>
+</Edge>
+</EdgeList>
+</Graph>
+</SimpleComponent>
+<SimpleComponent Kind="PLANT" Name="robo02">
+<Graph>
+<NodeList>
+<SimpleNode Initial="true" Name="Ocioso">
+<PointGeometry>
+<Point X="16" Y="48"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-29" Y="6"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="AcessandoBE">
+<PointGeometry>
+<Point X="192" Y="48"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-10" Y="-27"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="TranspCaixa">
+<PointGeometry>
+<Point X="512" Y="48"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="5" Y="-20"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="EmFalha">
+<PointGeometry>
+<Point X="272" Y="192"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="LocalizandoPedido">
+<PointGeometry>
+<Point X="352" Y="48"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-51" Y="-24"/>
+</LabelGeometry>
+</SimpleNode>
+</NodeList>
+<EdgeList>
+<Edge Source="Ocioso" Target="AcessandoBE">
+<LabelBlock>
+<SimpleIdentifier Name="request_M4"/>
+<LabelGeometry Anchor="NW">
+<Point X="-35" Y="-23"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="103" Y="58"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="AcessandoBE" Target="LocalizandoPedido">
+<LabelBlock>
+<SimpleIdentifier Name="robot_2_access_BE"/>
+<LabelGeometry Anchor="NW">
+<Point X="-50" Y="1"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+<Edge Source="LocalizandoPedido" Target="TranspCaixa">
+<LabelBlock>
+<SimpleIdentifier Name="robot_2_load_box"/>
+<LabelGeometry Anchor="NW">
+<Point X="-49" Y="2"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+<Edge Source="TranspCaixa" Target="Ocioso">
+<LabelBlock>
+<SimpleIdentifier Name="unload_M4"/>
+<LabelGeometry Anchor="NW">
+<Point X="-28" Y="5"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="270" Y="314"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="TranspCaixa" Target="Ocioso">
+<LabelBlock>
+<SimpleIdentifier Name="unload_M3"/>
+<LabelGeometry Anchor="NW">
+<Point X="-28" Y="4"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="271" Y="273"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Ocioso" Target="EmFalha">
+<LabelBlock>
+<SimpleIdentifier Name="robot_2_failure"/>
+<LabelGeometry Anchor="NW">
+<Point X="-57" Y="-30"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="174" Y="120"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="AcessandoBE" Target="EmFalha">
+<LabelBlock>
+<SimpleIdentifier Name="robot_2_failure"/>
+<LabelGeometry Anchor="NW">
+<Point X="-42" Y="-29"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="245" Y="128"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="LocalizandoPedido" Target="EmFalha">
+<LabelBlock>
+<SimpleIdentifier Name="robot_2_failure"/>
+<LabelGeometry Anchor="NW">
+<Point X="-18" Y="-31"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="323" Y="127"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="TranspCaixa" Target="EmFalha">
+<LabelBlock>
+<SimpleIdentifier Name="robot_2_failure"/>
+<LabelGeometry Anchor="NW">
+<Point X="-38" Y="-26"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="391" Y="142"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="EmFalha" Target="Ocioso">
+<LabelBlock>
+<SimpleIdentifier Name="robot_2_reset"/>
+<LabelGeometry Anchor="NW">
+<Point X="-20" Y="14"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="129" Y="144"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Ocioso" Target="AcessandoBE">
+<LabelBlock>
+<SimpleIdentifier Name="request_M3"/>
+<LabelGeometry Anchor="NW">
+<Point X="-36" Y="-21"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="104" Y="28"/>
+</SplineGeometry>
+</Edge>
+</EdgeList>
+</Graph>
+</SimpleComponent>
+</ComponentList>
+</Module>
