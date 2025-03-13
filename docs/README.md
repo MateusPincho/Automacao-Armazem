@@ -26,7 +26,7 @@ A produção ocorre atráves de máquinas que operam com os insumos armazenados 
 <img src="https://github.com/user-attachments/assets/1c5eb4c6-d666-4e14-b566-b706810416fa" height="200" align="center">
 </p>
 
-<p align="center">Figura 02: Autômato da Máquina 01</p>
+<p align="center">Figura 01: Autômato da Máquina 01</p>
 
 ### 🤖 Robôs Autônomos
 Os robôs são encarregados de, após receberem uma solicitação, enviar os insumos para as 4 máquinas. O robô 01 é responsável pelo suprimento das máquinas 1 e 2, enquanto o robô 02 é responsável pelas máquinas 3 e 4. É possível que durante a entrega dos insumos, os robôs apresentem falhas e não consigam finalizar sua tarefa. Para contornar isto, o robô 03 é programado para finalizar o pedido do robô inoperante e substituí-lo enquanto ele não resetar. 
@@ -47,7 +47,7 @@ Os robôs são encarregados de, após receberem uma solicitação, enviar os ins
 <p align="center">
 <img src="https://github.com/user-attachments/assets/aaf10960-e171-4a17-8e2b-21930b6fad99" height="200" align="center">
 </p>
-<p align="center">Figura 03: Autômato do Robô 01</p>
+<p align="center">Figura 02: Autômato do Robô 01</p>
 
 #### Estados - Robô Substituto
 - **Ocioso**: Robô aguardando ser acionado.
@@ -65,5 +65,5 @@ Os robôs são encarregados de, após receberem uma solicitação, enviar os ins
 <p align="center">
 <img src="https://github.com/user-attachments/assets/70059840-3424-483f-bbe6-0f7b3a37f573" height="400" align="center">
 </p>
-<p align="center">Figura 04: Autômato do Robô 03</p>
+<p align="center">Figura 03: Autômato do Robô 03</p>
 
