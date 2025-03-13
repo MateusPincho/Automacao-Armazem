@@ -31,4 +31,4 @@ Em um armazém automatizado, dois robôs móveis transportam caixas de insumos e
     └── src/    # Contém os arquivos gerados pela modelagem
 
 ## 📷 Vídeo
-Um vídeo demonstrativo contendo a formulação do problema e a modelagem realizada pode ser encontrado [Aqui!]()
+Um vídeo demonstrativo contendo a formulação do problema e a modelagem realizada pode ser encontrado [Aqui!](https://youtu.be/50OybWXpmI0)
